@@ -12,19 +12,14 @@ const randChoice = arr => {
 }
 
 for (i = 0; i < 20; i++) {
-  let person = {
-    gender: "",
+  const person = {
+    gender: randChoice(genders),
     firstName: "",
-    lastName: "",
-    age: "",
+    lastName: randChoice(lastNames),
+    age: Math.floor(Math.random() * 60 + 18),
   }
 
-  person.gender = randChoice(genders);
-  person.gender === 'F' ? person.firstName = randChoice(femaleNames) : person.firstName = randChoice(maleNames);
-  person.lastName = randChoice(lastNames);
-  person.age = Math.floor(Math.random() * 60 + 18)
-  people.push(person);
-  console.log(people);
+  person.gender === 'F' ? person.firstName = randChoice(femaleNames) : person.firstName = randChoice(maleNames)
 }
 
 
